@@ -1,0 +1,8 @@
+:host {
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+main { padding-top: 1rem; padding-bottom: 1rem; }
+
+.min-vh-100 { min-height: 100vh; }
+

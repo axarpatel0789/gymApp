@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+.logo-img {
+  height: 36px;
+  width: auto;
+}
+
+.navbar-nav .nav-link { padding: 0.5rem 1rem; }
+

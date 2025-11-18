@@ -1,0 +1,51 @@
+<section class="hero py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <img src="/assets/logo.svg" alt="GymApp" class="mb-3 d-inline-block logo-img-hero" />
+        <h1 class="display-4 fw-bold">Train smarter. Feel stronger.</h1>
+        <p class="lead text-muted">Personalized programs, expert trainers, and a supportive community to reach your goals.</p>
+        <div class="mt-4">
+          <a class="btn btn-primary btn-lg me-2" routerLink="/programs">Explore Programs</a>
+          <a class="btn btn-outline-secondary btn-lg" routerLink="/contact">Contact Us</a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center mt-4 mt-lg-0">
+        <img
+          [src]="hero"
+          class="img-fluid rounded shadow hero-img"
+          alt="gym"
+          loading="lazy"
+          (error)="onImgError()"
+        />
+      </div>
+    </div>
+
+    <div class="row mt-5 g-4">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Strength</h5>
+            <p class="card-text text-muted">Structured strength training plans for all levels.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Cardio</h5>
+            <p class="card-text text-muted">Cardio-focused programs to boost endurance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Nutrition</h5>
+            <p class="card-text text-muted">Simple nutrition guidance to fuel your workouts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
