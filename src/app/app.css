@@ -1,8 +1,30 @@
 :host {
 	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-main { padding-top: 1rem; padding-bottom: 1rem; }
+main { padding-top: 4.5rem; }
 
 .min-vh-100 { min-height: 100vh; }
+
+/* Responsive typography */
+h1, .display-4, .display-5 { line-height: 1.1; }
+@media (max-width: 575.98px) {
+	h1, .display-4 { font-size: 1.6rem; }
+	.lead { font-size: 1rem; }
+}
+@media (min-width: 576px) and (max-width: 991.98px) {
+	h1, .display-4 { font-size: 2.2rem; }
+}
+
+/* Constrain global content and add comfortable padding on small screens */
+.container { padding-left: 1rem; padding-right: 1rem; }
+@media (min-width: 1200px) {
+	.container { max-width: 1140px; }
+}
+
+/* Utility: ensure images don't overflow */
+img { max-width: 100%; height: auto; }
+
 

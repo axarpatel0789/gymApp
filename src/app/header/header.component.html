@@ -1,32 +1,61 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" routerLink="/">
-      <img src="/assets/logo.svg" alt="GymApp" class="logo-img me-2" />
-      <span class="fw-bold text-dark">GymApp</span>
+    <!-- Brand with gym logo and name -->
+    <a class="navbar-brand d-flex align-items-center fw-bold" routerLink="/">
+      <div class="logo-container me-3">
+        <i class="fas fa-dumbbell"></i>
+      </div>
+      <span class="brand-text">
+        <span class="brand-main">FITPRO</span>
+        <small class="brand-sub d-block">FITNESS CENTER</small>
+      </span>
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+
+    <!-- Mobile menu toggle -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-        <li class="nav-item">
-          <a class="nav-link text-dark" routerLink="/">Home</a>
+
+    <!-- Navigation menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fas fa-home me-1"></i>Home
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" routerLink="/programs">Programs</a>
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="/programs" routerLinkActive="active-link">
+            <i class="fas fa-dumbbell me-1"></i>Programs
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" routerLink="/contact">Contact</a>
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="/trainers" routerLinkActive="active-link">
+            <i class="fas fa-users me-1"></i>Trainers
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="/pricing" routerLinkActive="active-link">
+            <i class="fas fa-tag me-1"></i>Pricing
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active-link">
+            <i class="fas fa-phone me-1"></i>Contact
+          </a>
         </li>
       </ul>
+
+      <!-- Call to action buttons -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-outline-warning btn-sm">
+          <i class="fas fa-sign-in-alt me-1"></i>Login
+        </button>
+        <button class="btn btn-warning text-dark fw-bold btn-sm">
+          <i class="fas fa-user-plus me-1"></i>Join Now
+        </button>
+      </div>
     </div>
   </div>
 </nav>
