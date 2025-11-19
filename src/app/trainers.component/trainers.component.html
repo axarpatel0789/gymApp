@@ -1,0 +1,215 @@
+<section class="trainers-hero py-5 position-relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="trainers-hero-bg"></div>
+  <div class="hero-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+  </div>
+
+  <div class="container position-relative">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <h1 class="hero-title display-4 fw-bold mb-4">
+            Meet Our <span class="text-gradient">Expert Trainers</span>
+          </h1>
+          <p class="hero-description lead text-light opacity-90 mb-5">
+            Our certified fitness professionals are here to guide, motivate, and help you achieve 
+            your fitness goals with personalized training and expert knowledge.
+          </p>
+
+          <!-- Stats -->
+          <div class="trainer-stats row justify-content-center mb-5">
+            <div class="col-md-3 col-6 text-center">
+              <div class="stat-number h3 fw-bold text-warning mb-1">15+</div>
+              <div class="stat-label small text-light opacity-80">Certified Trainers</div>
+            </div>
+            <div class="col-md-3 col-6 text-center">
+              <div class="stat-number h3 fw-bold text-warning mb-1">1000+</div>
+              <div class="stat-label small text-light opacity-80">Happy Clients</div>
+            </div>
+            <div class="col-md-3 col-6 text-center">
+              <div class="stat-number h3 fw-bold text-warning mb-1">10+</div>
+              <div class="stat-label small text-light opacity-80">Years Experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trainers Grid Section -->
+<section class="trainers-grid py-5">
+  <div class="container">
+    <!-- Filter Tabs -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8">
+        <ul class="nav nav-pills justify-content-center trainer-filters" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button 
+              class="nav-link" 
+              [class.active]="activeFilter === 'all'"
+              (click)="setActiveFilter('all')">
+              All Trainers
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button 
+              class="nav-link" 
+              [class.active]="activeFilter === 'Strength'"
+              (click)="setActiveFilter('Strength')">
+              <i class="fas fa-dumbbell me-2"></i>Strength
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button 
+              class="nav-link" 
+              [class.active]="activeFilter === 'Cardio'"
+              (click)="setActiveFilter('Cardio')">
+              <i class="fas fa-running me-2"></i>Cardio
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button 
+              class="nav-link" 
+              [class.active]="activeFilter === 'Yoga'"
+              (click)="setActiveFilter('Yoga')">
+              <i class="fas fa-spa me-2"></i>Yoga
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button 
+              class="nav-link" 
+              [class.active]="activeFilter === 'Nutrition'"
+              (click)="setActiveFilter('Nutrition')">
+              <i class="fas fa-apple-alt me-2"></i>Nutrition
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Trainers Grid -->
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" *ngFor="let trainer of filteredTrainers">
+        <div class="trainer-card card border-0 shadow-lg h-100">
+          <div class="trainer-image position-relative overflow-hidden">
+            <img [src]="trainer.image" class="card-img-top" [alt]="trainer.name">
+            <div class="trainer-overlay position-absolute w-100 h-100 d-flex align-items-end justify-content-center">
+              <div class="social-links d-flex gap-2 mb-4">
+                <a [href]="trainer.social.facebook" class="social-link" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a [href]="trainer.social.instagram" class="social-link" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a [href]="trainer.social.twitter" class="social-link" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a [href]="trainer.social.linkedin" class="social-link" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+            <div class="trainer-badge position-absolute top-0 end-0 m-3">
+              <span class="badge bg-warning text-dark">{{trainer.experience}}+ Years</span>
+            </div>
+          </div>
+          
+          <div class="card-body p-4 text-center">
+            <h5 class="trainer-name fw-bold text-dark mb-2">{{trainer.name}}</h5>
+            <p class="trainer-title text-warning fw-semibold mb-3">{{trainer.title}}</p>
+            
+            <div class="specializations mb-3">
+              <span class="badge bg-light text-dark me-1 mb-1" *ngFor="let spec of trainer.specializations">
+                {{spec}}
+              </span>
+            </div>
+
+            <p class="trainer-bio text-muted mb-4">{{trainer.bio}}</p>
+
+            <div class="trainer-stats d-flex justify-content-around mb-4">
+              <div class="stat text-center">
+                <div class="stat-number h5 fw-bold text-dark mb-1">{{trainer.clients}}+</div>
+                <div class="stat-label small text-muted">Clients</div>
+              </div>
+              <div class="stat text-center">
+                <div class="stat-number h5 fw-bold text-dark mb-1">{{trainer.successRate}}%</div>
+                <div class="stat-label small text-muted">Success Rate</div>
+              </div>
+              <div class="stat text-center">
+                <div class="stat-number h5 fw-bold text-dark mb-1">{{trainer.rating}}</div>
+                <div class="stat-label small text-muted">Rating</div>
+              </div>
+            </div>
+
+            <div class="trainer-actions d-flex gap-2">
+              <button class="btn btn-warning flex-fw-bold">
+                <i class="fas fa-calendar-check me-2"></i>Book Session
+              </button>
+              <button class="btn btn-outline-secondary">
+                <i class="fas fa-envelope"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div class="row" *ngIf="filteredTrainers.length === 0">
+      <div class="col-12 text-center py-5">
+        <i class="fas fa-user-slash fa-3x text-muted mb-3"></i>
+        <h4 class="text-muted">No trainers found</h4>
+        <p class="text-muted">Try selecting a different specialization</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="trainers-cta py-5 bg-dark text-light">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h2 class="display-5 fw-bold mb-4">Ready to Start Your Transformation?</h2>
+        <p class="lead mb-5 opacity-90">
+          Get personalized training from our expert coaches and achieve results you never thought possible.
+        </p>
+        <div class="cta-actions">
+          <button class="btn btn-warning btn-lg px-5 py-3 fw-bold me-3">
+            <i class="fas fa-dumbbell me-2"></i>Start Training
+          </button>
+          <button class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
+            <i class="fas fa-comments me-2"></i>Free Consultation
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certification Section -->
+<section class="certifications py-5">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-6">
+        <h2 class="display-5 fw-bold mb-3">Our Certifications</h2>
+        <p class="lead text-muted">All our trainers hold internationally recognized certifications</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3 col-6 text-center" *ngFor="let cert of certifications">
+        <div class="cert-card p-4">
+          <div class="cert-icon mb-3">
+            <i [class]="cert.icon" class="fa-2x text-warning"></i>
+          </div>
+          <h6 class="fw-bold mb-2">{{cert.name}}</h6>
+          <small class="text-muted">{{cert.organization}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
