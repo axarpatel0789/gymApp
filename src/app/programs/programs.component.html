@@ -15,7 +15,7 @@
             Our <span class="text-gradient">Training Programs</span>
           </h1>
           <p class="hero-description lead text-light opacity-90 mb-5">
-            Discover the perfect program for your fitness journey. From strength training to yoga, 
+            Discover the perfect program for your fitness journey. From strength training to yoga,
             we offer expert-led programs designed to help you achieve your goals.
           </p>
 
@@ -46,36 +46,24 @@
     <!-- Filter Tabs - Fixed -->
     <div class="row justify-content-center mb-5">
       <div class="col-lg-8">
-        <ul class="nav nav-pills justify-content-center program-filters" role="tablist">
+        <ul class="nav nav-pills justify-content-center trainer-filters" role="tablist">
           <li class="nav-item" role="presentation">
-            <button 
-              class="nav-link" 
-              [class.active]="activeFilter === 'all'"
-              (click)="setActiveFilter('all')">
+            <button class="nav-link" [class.active]="activeFilter === 'all'" (click)="setActiveFilter('all')">
               All Programs
             </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button 
-              class="nav-link" 
-              [class.active]="activeFilter === 'Strength'"
-              (click)="setActiveFilter('Strength')">
+            <button class="nav-link" [class.active]="activeFilter === 'Strength'" (click)="setActiveFilter('Strength')">
               <i class="fas fa-dumbbell me-2"></i>Strength
             </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button 
-              class="nav-link" 
-              [class.active]="activeFilter === 'Cardio'"
-              (click)="setActiveFilter('Cardio')">
+            <button class="nav-link" [class.active]="activeFilter === 'Cardio'" (click)="setActiveFilter('Cardio')">
               <i class="fas fa-running me-2"></i>Cardio
             </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button 
-              class="nav-link" 
-              [class.active]="activeFilter === 'Yoga'"
-              (click)="setActiveFilter('Yoga')">
+            <button class="nav-link" [class.active]="activeFilter === 'Yoga'" (click)="setActiveFilter('Yoga')">
               <i class="fas fa-spa me-2"></i>Yoga
             </button>
           </li>
@@ -101,7 +89,7 @@
           <div class="card-body p-4">
             <h5 class="card-title fw-bold text-dark mb-3">{{program.title}}</h5>
             <p class="card-text text-muted mb-4">{{program.description}}</p>
-            
+
             <div class="program-features mb-4">
               <div class="feature-item d-flex align-items-center mb-2" *ngFor="let feature of program.features">
                 <i class="fas fa-check text-success me-2"></i>
